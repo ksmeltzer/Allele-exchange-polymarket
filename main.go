@@ -9,7 +9,7 @@ import (
 
 //go:wasmexport Manifest
 func Manifest() uint64 {
-	manifestJSON := `{"name": "allele-exchange-polymarket", "version": "v1.0.0", "description": "Polymarket Exchange Adapter", "author": "Allele Org", "dependencies": [], "config": [{"key": "WALLET_ADDRESS", "type": "string", "description": "Public Wallet Address (0x...) for Auto-Keygen", "required": false}, {"key": "WALLET_PRIVATE_KEY", "type": "secret", "description": "Wallet Private Key for Auto-Keygen", "required": false}, {"key": "POLY_API_KEY", "type": "secret", "description": "Polymarket API Key", "required": true}, {"key": "POLY_API_SECRET", "type": "secret", "description": "Polymarket API Secret", "required": true}, {"key": "POLY_API_PASSPHRASE", "type": "secret", "description": "Polymarket API Passphrase", "required": true}]}`
+	manifestJSON := `{"name": "allele-exchange-polymarket", "version": "v1.0.0", "description": "Polymarket Exchange Adapter", "author": "Allele Org", "dependencies": [], "config": [{"key": "WALLET_ADDRESS", "type": "string", "description": "Public Polygon Wallet Address (0x...)", "required": true}, {"key": "WALLET_PRIVATE_KEY", "type": "secret", "description": "Polygon Wallet Private Key (0x...)", "required": true}]}`
 	outBytes := []byte(manifestJSON)
 	outPtr := uint32(uintptr(unsafe.Pointer(&outBytes[0])))
 	outLen := uint32(len(outBytes))
